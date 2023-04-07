@@ -1,0 +1,28 @@
+﻿@page "/"
+
+@*<pagetitle>index</pagetitle>
+
+<h1>hello, world!</h1>
+
+welcome to your new app.*@
+
+<surveyprompt title="how is blazor working for you?" />
+
+@*<p>Hello, @name.ToUpper()</p>*@
+
+<h1>Hello , @CustomToUpper(name)</h1>
+<p>Let's Add 2+2 = @(2 + 2)</p>
+<button @onclick="@WriteInLog">Click Me</button>
+
+@code{
+    string name = "Kallan";
+    string CustomToUpper(string value) => value.ToUpper();
+
+    void WriteInLog()
+    {
+        Console.WriteLine("I've been Clicked! (from method)");
+    }
+}
+
+<Counter/>
+<FetchData/>
